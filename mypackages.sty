@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+
+%for general information about packages check ctan.org
+
+
+% Figures, Tables and Equations
+\usepackage{graphicx} % for figures
+\graphicspath{ {images/} } %path for images, in the images folder
+\usepackage{float} % for figures in a container which cannot be broken between pages 
+\usepackage{multirow} % splitting environments into multiple parts
+\usepackage{booktabs} % for tables
+\usepackage{amsmath} % for equations
+\usepackage{tikz} % for tikz drawings
+
+
+
+% Aesthetics
+\setlength\parindent{0pt} % no indent throughout whole 
+
+% References/Usability
+\usepackage{natbib}
+\usepackage[breaklinks]{hyperref} % link references/section
+\hypersetup{
+    colorlinks=true,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=black, %For the in-text referencing
+    linkcolor=black, % internal links such as ToC and references between figures/equations and etc
+    pdftitle = paper Title,
+}
+\usepackage{appendix} % additional features for appendix, such as \addappheadtotoc
+
+% margins
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
