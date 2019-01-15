@@ -2,7 +2,7 @@
 \usepackage{mypackages}
 
 %title information
-\title{Paper Title}
+\title{Paper Title v3}
 \author{Your Name}
 
 
@@ -27,7 +27,7 @@
 \section{Discussion}
 \section{Evaluation}
 
-\section{\LaTeX help}
+\section{\LaTeX{} help}
 
 \subsection{General Help}
 
@@ -36,17 +36,18 @@
 
 \subsection{Equations}
 
-From Equation \eqref{eq:equation1} \ldots
+From Equation \eqref{eq:einsteinequation} \ldots
+
 
 \begin{equation}
-\label{eq:equation1}
+\label{eq:einsteinequation}
 E = m c^2
 \end{equation}
 
 Here is a not numbered equation:
 
 \begin{equation*}
-\label{eq:equation1}
+\label{eq:einsteinequation*}
 E = m c^2
 \end{equation*}
 
@@ -74,29 +75,32 @@ Math can also be writing in line $1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\frac{1}
 \item cookies
 \end{itemize}
 
-\subsection{Verbatim(for code)}
-
-\begin{verbatim}
-xtick = [j*100 for j in range(11)]
-ytick = [k*10 for k in range(11)]
-\end{verbatim}
 
 \subsection{Figures}
-\subsubsection{Image}
+The figures enviroment provides an envirnoment that allwos \textbf{XYZ}.
+\subsubsection{Images}
 
-Images are included by using the graphicx environment by using the includegraphics command.
+Images are included by using the graphicx environment by using the \texttt{figure} environment and the \texttt{includegraphics} command. An example of an image being inserted can be seen in \ref{fig:einstein}, it was done as follows:
 
-\begin{figure}[H] % make sure to have the [H] to have it as a float, so it is in the place you intended it to be not at the start of the page
+\begin{lstlisting}[breaklines]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.3\textwidth]{einstein.jpg}
+\caption{\label{fig:einstein} Albert Einstein on his 72nd Birthday (14 March 1951) \cite{ArthurSasse}.}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.3\textwidth]{einstein.jpg}
 \caption{\label{fig:einstein} Albert Einstein on his 72nd Birthday (14 March 1951) \cite{ArthurSasse}.}
 \end{figure}
 
 \subsubsection{Tikz Drawing}
-You can also draw directly in \LaTeX using the Tikz package, however you draw by defining the shapes through using a coordinate system.
+You can also draw directly in \LaTeX{} using the Tikz package, however you draw by defining the shapes through using a coordinate system.
 
 
-\begin{figure} [H]
+\begin{figure}[h]
 \centering
 
 \begin{tikzpicture}
@@ -121,12 +125,14 @@ You can also draw directly in \LaTeX using the Tikz package, however you draw by
 
 I typically put the tikzpicture in a figure environment, as seen in Figure \ref{fig:I_beam}.
 
-\href{http://texample.net/tikz/}{Tikz examples}
+See \href{http://texample.net/tikz/}{this} for some tikz examples.
+\subsubsection{Figure Position}
+
 
 \subsection{Table}
 
 % Note this table uses the booktabs package
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{Booktabs table}
 \label{tbl:table1}
@@ -139,11 +145,11 @@ How come & \textbf{4} & Hello \\ \bottomrule
 \end{table}
 
 
-Tables in \LaTeX \ % the \ is for space
+Tables in \LaTeX{} % the {} is for space
 are not the most convenient, as seen by Table \ref{tbl:table1} verbatim:
 
 \begin{verbatim}
-\begin{table}[H]
+\begin{table}[h]
 \centering
 \caption{Booktabs table}
 \label{tbl:table1}
@@ -162,16 +168,46 @@ Therefore I strongly using an online table generator such as \href{https://www.t
 
 \subsection{Verbatim Environments}
 
-Verbatim
+\texttt{verbatim} environments are used to display computer text, in larger environment as opposed to using \texttt{\textbackslash texttt\{\}}. It work well for pseudocode too. However, generally it is recommended to use the \texttt{listings} environment giving its plethora of features. 
 
 \begin{verbatim}
 xtick = [j*100 for j in range(11)]
 ytick = [k*10 for k in range(11)]
 \end{verbatim}
 
-\subsection{Referencing in \LaTeX}
+\subsection{Code listings}
 
-Referencing in \LaTeX is nice and annoying at the same time. You have to write out the content attributes, however it does in text referencing for you by using  the cite command with the reference key in the curly bracket. Note that there are different bibliography styles so make sure to change it to the one your school/uni is using. You can do this by simply searching.
+However, for listing code, another environment exist (\texttt{listings}) that is more well adapt, by allowing syntax highlighting among other features.
+
+\begin{lstlisting}[language=Python]
+W=[] #winnning positions
+L=[0] #//losing positions
+D=[] #// Difference between losing positions
+a = input("Enter first number of coins which can be removed: ")
+b = input("Enter second number of coins which can be removed: ")
+c = input("Enter third number of coins which can be removed: ")
+x = input("Enter total number of coins that are in the pile: ")
+
+for i in range (1,int(x)):
+  if ((i-int(a)) in L or (i-int(b)) in L or (i-int(c)) in L) :
+      W.append(i)
+  else:
+        L.append(i)
+for e in range (1,len(L)):
+    D.append(L[e]-L[e-1])
+
+
+print("Information for",a,b,c)
+print ("-"*80)
+print("Win:", W)
+print("Lose:", L)
+print("Difference between Losing positions:", D)
+\end{lstlisting}
+
+
+\subsection{Referencing in \LaTeX{}}
+
+Referencing in \LaTeX{} is nice and annoying at the same time. You have to write out the content attributes, however it does in text referencing for you by using  the cite command with the reference key in the curly bracket. Note that there are different bibliography styles so make sure to change it to the one your school/uni is using. You can do this by simply searching.
 
 \url{https://www.sharelatex.com/learn/Bibtex_bibliography_styles}
 

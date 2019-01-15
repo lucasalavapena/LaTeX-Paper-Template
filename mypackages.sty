@@ -11,11 +11,41 @@
 \usepackage{booktabs} % for tables
 \usepackage{amsmath} % for equations
 \usepackage{tikz} % for tikz drawings
+\usepackage{color}
+\usepackage{listings} % to display code in an environment with syntax highlighting
+%codelisting style
 
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
 
 
 % Aesthetics
-\setlength\parindent{0pt} % no indent throughout whole 
+\setlength\parindent{0pt} % no indent throughout whole document, me no speak american
 
 % References/Usability
 \usepackage{natbib}
@@ -39,3 +69,12 @@
  top=20mm,
  }
 
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Title}
+\lhead{Why}
+\rfoot{Hi}
+\cfoot{\thepage}
+\lfoot{Author?}
