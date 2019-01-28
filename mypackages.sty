@@ -7,42 +7,28 @@
 \usepackage{graphicx} % for figures
 \graphicspath{ {images/} } %path for images, in the images folder
 \usepackage{float} % for figures in a container which cannot be broken between pages 
-\usepackage{multirow} % splitting environments into multiple parts
 \usepackage{booktabs} % for tables
 \usepackage{amsmath} % for equations
 \usepackage{tikz} % for tikz drawings
 \usepackage{color}
-\usepackage{listings} % to display code in an environment with syntax highlighting
-%codelisting style
+\usepackage{parskip}
+% \usepackage{listings} % to display code in an environment with syntax highlighting
+% %codelisting style
 
- 
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+%Shorten commands for matrices
+\newcommand*\bpsm {\begin{psmallmatrix}}
+\newcommand*\epsm {\end{psmallmatrix}}
+\newcommand*\bpm {\begin{pmatrix}}
+\newcommand*\epm {\end{pmatrix}}
+\newcommand*\bbm {\begin{bmatrix}}
+\newcommand*\ebm {\end{bmatrix}}
 
-
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2
+\usepackage[T1]{fontenc}
+\usepackage[framed,numbered]{matlab-prettifier}
+\lstset{
+	style = Matlab-editor,
+	basicstyle=\mlttfamily\small,
 }
- 
-\lstset{style=mystyle}
-
 
 % Aesthetics
 \setlength\parindent{0pt} % no indent throughout whole document, me no speak american
@@ -61,20 +47,22 @@
 \usepackage{appendix} % additional features for appendix, such as \addappheadtotoc
 
 % margins
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
+% \usepackage{geometry}
+%  \geometry{
+%  a4paper,
+%  total={170mm,257mm},
+%  left=20mm,
+%  top=20mm,
+%  }
 
-\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
  
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Title}
-\lhead{Why}
-\rfoot{Hi}
-\cfoot{\thepage}
-\lfoot{Author?}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{Title}
+% \lhead{Why}
+% \rfoot{Hi}
+% \cfoot{\thepage}
+% \lfoot{Author?}
+
+\usepackage{mdframed} 
