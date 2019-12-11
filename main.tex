@@ -1,6 +1,7 @@
 \documentclass[11pt,a4paper,titlepage]{article}
 \usepackage{mypackages}
 
+
 %title information
 \title{Paper Title v3}
 \author{Your Name}
@@ -132,24 +133,16 @@ See \href{http://texample.net/tikz/}{this} for some tikz examples.
 \subsection{Table}
 
 % Note this table uses the booktabs package
-\begin{table}[h]
-\centering
-\caption{Booktabs table}
-\label{tbl:table1}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Text1    & Text2      & Text3 \\ \midrule
-1        & 3          & 2     \\
-How come & \textbf{4} & Hello \\ \bottomrule
-\end{tabular}
-\end{table}
+%\begin{table}[H]
+\input{Tables/booktabs_table}
+%\end{table}
 
 
 Tables in \LaTeX{} % the {} is for space
 are not the most convenient, as seen by Table \ref{tbl:table1} verbatim:
 
 \begin{verbatim}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \caption{Booktabs table}
 \label{tbl:table1}
@@ -211,10 +204,8 @@ Referencing in \LaTeX{} is nice and annoying at the same time. You have to write
 
 \url{https://www.sharelatex.com/learn/Bibtex_bibliography_styles}
 
-
-
-\bibliographystyle{agsm} % you should change the style
 \bibliography{references}
+
 
 
 \clearpage
