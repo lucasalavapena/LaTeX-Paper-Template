@@ -4,3 +4,8 @@ This a simple LaTeX template for a paper. This is the regular set up I use for m
 
 ## To Do List
 * Make the title page more aesthetically appealing
+
+
+
+## Random LaTeX things to remember
+

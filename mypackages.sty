@@ -1,64 +1,93 @@
 \usepackage[utf8]{inputenc}
 
-
-\usepackage{fontspec}
-% change to your desired font here
-% \setmainfont{Calibri}
-
-
-% \setmainfont[Path = ./Fonts/Calibri/,  %% Optional; but UPDATE this if 
-%                          %% your font files are in a folder
-%  Extension = .ttf,
-%  UprightFont = *-Regular,
-%  BoldFont = *-Bold,
-%  ItalicFont = *-Italic,
-%  SmallCapsFont = *-SmallCaps]
-% {calibri}
+%for general information about packages check ctan.org
 
 
 % Figures, Tables and Equations
 \usepackage{graphicx} % for figures
-\graphicspath{ {Images/} } %path for images, in the images folder
+\graphicspath{ {images/} } %path for images, in the images folder
 \usepackage{float} % for figures in a container which cannot be broken between pages 
 \usepackage{booktabs} % for tables
 \usepackage{amsmath} % for equations
 \usepackage{tikz} % for tikz drawings
 \usepackage{color}
 \usepackage{parskip}
-% %codelisting style
+\usepackage{todonotes} % to add notes to do
+\usepackage{siunitx} % with dealing with units
 
 % \usepackage{listings} % to display code in an environment with syntax highlighting
+% %codelisting style
 
-
-%Shorten commands for matrices
+%Shorten commands for matrices/Maths
 \newcommand*\bpsm {\begin{psmallmatrix}}
 \newcommand*\epsm {\end{psmallmatrix}}
 \newcommand*\bpm {\begin{pmatrix}}
 \newcommand*\epm {\end{pmatrix}}
 \newcommand*\bbm {\begin{bmatrix}}
 \newcommand*\ebm {\end{bmatrix}}
+\renewcommand{\vec}[1]{\mathbf{#1}}
 
 
-% % Some Maths options
-% \allowdisplaybreaks %to go on to the next page in maths environments such as align
+% Some Maths options
+\allowdisplaybreaks %to go on to the next page in maths environments such as align
 
-
-% %Showing MATLAB Code
+%Showing MATLAB Code
+\usepackage[T1]{fontenc}
 \usepackage[framed,numbered]{matlab-prettifier}
 \lstset{
 	style = Matlab-editor,
 	basicstyle=\mlttfamily\small,
 }
 
+
+% For other code
+
+\usepackage{listings}
+
+\definecolor{theWhite}{gray}{0.9}
+\definecolor{comments}{HTML}{619647}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{string}{HTML}{A5C25C}
+\definecolor{backcolour}{HTML}{2B2B2B}
+\definecolor{keyword}{HTML}{CB772F}
+\definecolor{codecolor}{HTML}{A9B7C6}
+\definecolor{draculapurple}{HTML}{BD93F9}
+
+\lstdefinestyle{pycharm}{
+    basicstyle=\ttfamily \color{theWhite},
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{comments},
+    keywordstyle=\color{keyword},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{string},
+    keywordstyle=[2]\color{draculapurple},
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,      
+    columns = flexible,
+    tabsize=2
+}
+
+\lstset{style=pycharm}
+
+
 % Aesthetics
 \setlength\parindent{0pt} % no indent throughout whole document, me no speak american
 
+% References/Usability
 % References/Usability
 \usepackage{natbib}
 \bibliographystyle{ieeetr} 
 \setcitestyle{numbers}
 \setcitestyle{square}   % use square brackets for citation opposed to curved???
 
+\usepackage{subcaption}
 
 
 
@@ -69,27 +98,27 @@
     urlcolor=blue,
     citecolor=black, %For the in-text referencing
     linkcolor=black, % internal links such as ToC and references between figures/equations and etc
-    pdftitle = paper Title, % will change title of pdf when exported
+    pdftitle = paper Title,
 }
 \usepackage{appendix} % additional features for appendix, such as \addappheadtotoc
 
 % margins
-\usepackage{geometry}
- \geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=20mm,
- }
+% \usepackage{geometry}
+%  \geometry{
+%  a4paper,
+%  total={170mm,257mm},
+%  left=20mm,
+%  top=20mm,
+%  }
 
-\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
  
-\pagestyle{fancy}
-\fancyhf{}
-\rhead{Title}
-\lhead{Why}
-\rfoot{Hi}
-\cfoot{\thepage}
-\lfoot{Author?}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{Title}
+% \lhead{Why}
+% \rfoot{Hi}
+% \cfoot{\thepage}
+% \lfoot{Author?}
 
 \usepackage{mdframed} 
